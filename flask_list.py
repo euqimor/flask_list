@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def print_list():
-    os.chdir(os.path.expanduser('~/py/discord/'))
+    os.chdir('home/ec2-user/py/discord/')
     with open('suggestions') as f:
         suggestions = eval(f.read())
         set_of_games = set({})
