@@ -1,8 +1,11 @@
 from flask import Flask, render_template
+import os
+
 app = Flask(__name__)
 
 @app.route('/')
 def print_list():
+    os.chdir(os.path.expanduser('~/py/discord/'))
     with open('suggestions') as f:
         suggestions = eval(f.read())
         set_of_games = set({})
