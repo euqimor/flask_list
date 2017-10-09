@@ -9,9 +9,10 @@ def print_list():
     with open('suggestions') as f:
         suggestions = eval(f.read())
         set_of_games = set({})
-        for name in suggestions:
-            for game in suggestions[name]:
-                set_of_games.add(game)
+        for id in suggestions:
+            for game in suggestions[id]['games']:
+                if game.lower() not in set_of_games:
+                    set_of_games.add(game)
     return render_template('list.html', suggestions=set_of_games)
 
 
