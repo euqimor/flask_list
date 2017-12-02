@@ -2,8 +2,6 @@ from flask import Flask, render_template
 import os
 import sqlite3
 from contextlib import closing
-from werkzeug.debug import DebuggedApplication
-application = DebuggedApplication(app, True)
 
 app = Flask(__name__)
 
